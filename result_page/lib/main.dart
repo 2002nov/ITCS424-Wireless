@@ -18,43 +18,55 @@ class MyApp extends StatelessWidget {
 final List<ProductBox> products = [
     ProductBox(
       name: "Movie 1",
-      image: "result1.jpeg",
+      image: "assets/result1.jpeg",
     ),
     ProductBox(
       name: "Movie 2",
-      image: "result2.jpeg",
+      image: "assets/result2.jpeg",
     ),
     ProductBox(
       name: "Movie 3",
-      image: "result3.jpeg",
+      image: "assets/result3.jpeg",
     ),
     ProductBox(
       name: "Movie 4",
-      image: "result4.jpeg",
+      image: "assets/result4.jpeg",
     ),
     ProductBox(
-      name: "MMovie 5",
-      image: "result5.jpeg",
+      name: "Movie 5",
+      image: "assets/result5.jpeg",
     ),
     ProductBox(
       name: "Movie 6",
-      image: "result6.jpeg",
+      image: "assets/result6.jpeg",
     ),
     ProductBox(
       name: "Movie 7",
-      image: "result7.jpeg",
+      image: "assets/result7.jpeg",
     ),
     ProductBox(
       name: "Movie 8",
-      image: "result8.jpeg",
+      image: "assets/result8.jpeg",
     ),
     ProductBox(
       name: "Movie 9",
-      image: "result9.jpeg",
+      image: "assets/result9.jpeg",
     ),
     ProductBox(
       name: "Movie 10",
-      image: "result10.jpeg",
+      image: "assets/result10.jpeg",
+    ),
+    ProductBox(
+      name: "Movie 11",
+      image: "assets/result11.jpeg",
+    ),
+    ProductBox(
+      name: "Movie 12",
+      image: "assets/result12.jpeg",
+    ),
+    ProductBox(
+      name: "Movie 13",
+      image: "assets/result13.jpeg",
     ),
 ];
 
@@ -85,19 +97,21 @@ final List<ProductBox> products = [
           ),
         ),
         backgroundColor: Colors.black,
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Text("Result for:   Barbie", style: TextStyle(color: Colors.white, fontSize: 22, fontFamily: 'EncodeSansCondensed')),
-            ),
-              //---------------------------------
-            Expanded(
-              child: GridView.builder(
+//------------------------------------------------
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Text("Result for:   Barbie", style: TextStyle(color: Colors.white, fontSize: 22, fontFamily: 'EncodeSansCondensed')),
+              ),
+              GridView.builder(
+                // physics: ScrollPhysics(),
+                shrinkWrap: true,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3,
-                  crossAxisSpacing: 1.0,
+                  crossAxisSpacing: 0.5,
                   mainAxisSpacing: 70.0,
                 ),
                 itemCount: products.length,
@@ -105,13 +119,14 @@ final List<ProductBox> products = [
                   return ProductBoxWidget(product: products[index]);
                 },
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
   }
 }
+
 
 class ProductBoxWidget extends StatelessWidget {
   final ProductBox product;
@@ -125,8 +140,8 @@ class ProductBoxWidget extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
 
     // Calculate the responsive size for Image.asset
-    double imageHeight = screenHeight * 0.25;
     double imageWidth = screenWidth * 0.25;
+    double imageHeight = imageWidth * 1.50;
 
     return Container(
       // padding: EdgeInsets.all(1.0),
@@ -171,6 +186,3 @@ class ProductBoxWidget extends StatelessWidget {
     );
   }
 }
-
-
-

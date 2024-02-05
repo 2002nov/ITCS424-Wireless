@@ -27,7 +27,7 @@ environment:
 # dependencies can be manually updated by changing the version numbers below to
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
-dependencies:
+dependencies: 
   flutter:
     sdk: flutter
 
@@ -67,6 +67,9 @@ flutter:
     - assets/result8.jpeg
     - assets/result9.jpeg
     - assets/result10.jpeg
+    - assets/result11.jpeg
+    - assets/result12.jpeg
+    - assets/result13.jpeg
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
