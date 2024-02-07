@@ -27,7 +27,7 @@ class FirstPage extends StatelessWidget {
                   fontFamily: 'EncodeSansCondensed',
                   fontSize: 15,
                 ),
-                border: OutlineInputBorder(
+                focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(35),
                   borderSide: BorderSide(color: Colors.white),
                 ),
@@ -47,7 +47,6 @@ class FirstPage extends StatelessWidget {
                 contentPadding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
               ),
               onChanged: (value) {
-                // Do something with the search value (e.g., filter a list)
                 print('Search query: $value');
               },
               style: TextStyle(color: Colors.white),

@@ -85,7 +85,7 @@ class SecondPage extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.search, color: Colors.white),
               onPressed: () {
-                Navigator.of(context).pop(); // Navigate back to the previous page (assuming the first page is the previous page)
+                Navigator.of(context).pop();
               },
             )
           ],
@@ -107,7 +107,6 @@ class SecondPage extends StatelessWidget {
                 child: Text("Result for:   $searchQuery", style: TextStyle(color: Colors.white, fontSize: 25, fontFamily: 'EncodeSansCondensed')),
               ),
               GridView.builder(
-                // physics: ScrollPhysics(),
                 shrinkWrap: true,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3,
